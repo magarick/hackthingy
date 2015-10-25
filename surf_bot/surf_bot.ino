@@ -1,3 +1,5 @@
+// You are interested in sending the variables yaw, pitch, roll, and speed
+
 #include <Wire.h>
 #include "I2Cdev.h"
 #include "MPU6050_9Axis_MotionApps41.h"
@@ -178,9 +180,9 @@ void loop() {
     pitch *= 180.0f / PI;
     yaw   *= 180.0f / PI;
     roll  *= 180.0f / PI;
-    pack_message();
+    //pack_message();
 
-    unpack_message();
+    //unpack_message();
 
     // Serial.print("Yaw, Pitch, Roll: ");
     // Serial.print(y, 2);
@@ -193,6 +195,7 @@ void loop() {
     //Serial.print("rate = "); Serial.print((float)1.0f/deltat, 2); Serial.println(" Hz");
     count = millis();
   }
+  // The above was for printing, but this will run every iteration of the loop. You should write all of the variables to serial here.
   cycle_dur = millis();
 }
 
